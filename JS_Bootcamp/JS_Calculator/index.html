@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple JS Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <header>  
+            <h2>A Simple Two-number Calculator</h2>
+            <h3>A Codewit JS Bootcamp Project</h3>
+        </header>   
+        <div class="display" id="display"></div>
+        <button onclick="all_clear()" id="clear" class="span-two_columns">AC</button>
+        <button onclick="delete_button()" id="delete">←</button>
+        <button id="operator" onclick="input_number('/')">÷</button>
+        <button id="number" onclick="input_number(1)">1</button>
+        <button id="number" onclick="input_number(2)">2</button>
+        <button id="number" onclick="input_number(3)">3</button>
+        <button id="operator" onclick="input_number('*')">×</button>
+        <button id="number" onclick="input_number(4)">4</button>
+        <button id="number" onclick="input_number(5)">5</button>
+        <button id="number" onclick="input_number(6)">6</button>
+        <button id="operator" onclick="input_number('+')">+</button>
+        <button id="number" onclick="input_number(7)">7</button>
+        <button id="number" onclick="input_number(8)">8</button>
+        <button id="number" onclick="input_number(9)">9</button>
+        <button id="operator" onclick="input_number('-')">-</button>
+        <button id="number" onclick="input_number('.')">.</button>
+        <button id="number" onclick="input_number(0)">0</button>
+        <button onclick="calculate()" id="equals" class="span-two_columns">=</button>
+        <p id="date"></p>
+        <p>Submitted: Aminu Mohammed Twumasi</p>
+        <p>sirtwumasi77@gmail.com</p>
+    </div>
+</body>
+</html>
