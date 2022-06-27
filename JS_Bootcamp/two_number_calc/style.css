@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.calc-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: red;
+    height: 85vh;
+    width: 85%;
+    margin: 2.5rem auto;
+    padding: 5px;
+}
+
+input {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: auto;
+    font-size: large;
+    text-align: right;
+    border-radius: 5px;
+}
+
+select {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: large;
+    width: 94%;
+    text-align: center;
+}
+
+button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: large;
+    width: 94%;
+}
+
+button:hover {
+    background-color: #334155;
+    color: whitesmoke;
+}
+
+#result {
+    color: whitesmoke;
+}
+
+#date {
+    font-weight: bolder;
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple JS Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="calc-container">
+        <div><h2>A Simple Two-number Calculator</h2></div>
+        <div class="sub-container">
+            <input type="number" required placeholder="Enter first number" name="first-operand" id="first-operand"><br>
+            <select name="operator" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">÷</option>
+                <option value="*">×</option>
+            </select><br>
+            <input type="number" required placeholder="Enter Second Number" name="" id="second-operand"><br>
+            <button onclick="calculate()">Calculate</button><br>
+            <input type="text" disabled placeholder="Results" id="result">
+        </div>
+        <div id="date"></div>
+        <p>Submitted by: sirtwumasi77@gmail.com</p>
+    </div>
+</body>
+</html>
