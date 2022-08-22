@@ -35,9 +35,9 @@ img {
 .child {
     margin: 10px;
     padding: 15px;
-    width: fit-content;
+    width: 75%;
     height: fit-content;
-    background-color: brown;
+    background-color: maroon;
     opacity: 0.93;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     border-radius: 5px;
@@ -52,11 +52,14 @@ h3 {
     text-decoration: underline;
     padding: 2px;
     margin: 5px;
+    font-size: 16px;
 }
 
 p {
     font-size: 16px;
     padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #showData {
@@ -67,6 +70,8 @@ p {
     font-weight: bold;
     text-decoration: underline;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sub-head {
@@ -93,11 +98,15 @@ input[type=number], [type=text] {
 }
 
 table {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
 tr {
     font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 td {
@@ -110,20 +119,22 @@ td {
 
 button {
     text-align: center;
-    padding: 4px;
+    padding: 5px;
     margin: 2px;
     border-radius: 5px;
     font-size: smaller;
+    background-color: white;
+    color: maroon;
 }
 
 button:hover {
-    background-color: brown;
+    background-color: maroon;
     color: white;
 }
 
 button::after {
     background-color: white;
-    color: brown;
+    color: maroon;
 }
 
 .submit-button {
@@ -135,7 +146,8 @@ a:link {
 }
 
 .footer {
-    text-align: end;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 10px;
     background-color: black;
     border-radius: 5px;

@@ -30,17 +30,20 @@
             </ul>
         </div>
         <div class="child">
-            <p class="header">Enter your dataset separated by commas(,)</p>
+            <p class="header">Enter dataset</p>
+            <p class="header" style="text-decoration: none; color: white; font-size: 12px;">Note: A valid dataset/weights must be two or more comma separated numbers</p>
             <table>
                 <tr>
                     <td>Dataset: </td>
                     <td><input type="text" name="enter dataset" id="dataset"></td>
-                    <td><button class="submit-button" onclick="submit()">Submit</button></td>
+                    <td><button class="submit-button" id="check-click" onclick="submit()">Submit</button></td>
                     <td><button class="clear-button" onclick="document.getElementById('dataset').value=''">Clear</button></td>
                 </tr>
             </table>
             <table>
-                <p style="font-weight: bold;">For Weighted Mean, input weights in the textbox below</p>
+                <tr>
+                <p class="header" style="text-decoration: none;">Enter weights of dataset if any else leave empty</p>
+                </tr>
                 <tr>
                     <td>Weights: </td>
                     <td><input type="text" name="enter weights for weighted mean" id="weight"></td>
@@ -64,22 +67,22 @@
                 <tr>
                     <td>Mean: </td>
                     <td><input type="number" name="mean" id="mean" disabled></td>
-                    <td><button onclick="findMean()">Calculate</button></td>
+                    <td><button onclick="findMean()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Weighted Mean: </td>
                     <td><input type="number" name="weighted mean" id="weighted-mean" disabled></td>
-                    <td><button onclick="findWeightedMean()">Calculate</button></td>
+                    <td><button onclick="findWeightedMean()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Mode: </td>
                     <td><input type="number" name="mode" id="mode" disabled></td>
-                    <td><button onclick="findMode()">Calculate</button></td>
+                    <td><button onclick="findMode()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Median: </td>
                     <td><input type="number" name="median" id="median" disabled></td>
-                    <td><button onclick="findMedian()">Calculate</button></td>
+                    <td><button onclick="findMedian()">Show</button></td>
                 </tr>
             </table>
         </div>
@@ -94,39 +97,36 @@
                 <tr>
                     <td>Range: </td>
                     <td><input type="number" name="range" id="range" disabled></td>
-                    <td><button onclick="findRange()">Calculate</button></td>
+                    <td><button onclick="findRange()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Mean Deviation: </td>
                     <td><input type="number" name="mean deviation" id="mean-deviation" disabled></td>
-                    <td><button onclick="findMeanDeviation()">Calculate</button></td>
+                    <td><button onclick="findMeanDeviation()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Variance: </td>
                     <td><input type="number" name="variation" id="variance" disabled></td>
-                    <td><button onclick="findVariance()">Calculate</button></td>
+                    <td><button onclick="findVariance()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Standard Deviation: </td>
                     <td><input type="number" name="standard deviation" id="standard-deviation" disabled></td>
-                    <td><button onclick="findStandardDeviation()">Calculate</button></td>
+                    <td><button onclick="findStandardDeviation()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Quartile Deviation: </td>
                     <td><input type="number" name="quartile deviation" id="quartile-deviation" disabled></td>
-                    <td><button onclick="findQuartileDeviation()">Calculate</button></td>
+                    <td><button onclick="findQuartileDeviation()">Show</button></td>
                 </tr>
                 <tr>
                     <td>Co-efficient of Variance: </td>
                     <td><input type="text" name="co-efficient of variance" id="cf-variance" disabled></td>
-                    <td><button onclick="findCoVariance()">Calculate</button></td>
+                    <td><button onclick="findCoVariance()">Show</button></td>
                 </tr>
             </table>
         </div>
-        <div>
-            <p class="footer">Group 5 (ITE 200I) &copy;2022</p>
-            <p class="footer">Contact us, Click<a href="https://wa.me/233506627676?text=Hi%20I%20found%20your%20Probability%20and%20Statistics%20Project%20Interesting"> here</a></p>
-        </div>
+            <p class="footer">Group 5 (ITE 200I) &copy;2022 - Contact us, Click <a href="https://wa.me/233506627676?text=Hi%20I%20found%20your%20Probability%20and%20Statistics%20Project%20Interesting"> here</a></p>
     </div>
 </body>
 </html>
