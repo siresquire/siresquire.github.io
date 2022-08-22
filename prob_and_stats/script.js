@@ -1,9 +1,15 @@
 function submit(){
     const dataset = (document.getElementById("dataset").value).split(',');
-    const datasetArr = dataset.map(str => {
+    const format =/^[0-9,.]*$/;
+
+    if(format.test(dataset)){
+       const datasetArr = dataset.map(str => {
         return Number(str);
-    });
+       });
     return datasetArr;
+    } else {
+       prompt("Invalid data submitted. Enter numbers separated by commas");
+    };  
 }
 
 function submitWeight(){
