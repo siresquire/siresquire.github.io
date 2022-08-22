@@ -8,7 +8,7 @@ function submit(){
        });
     return datasetArr;
     } else {
-       prompt("Invalid data submitted. Enter numbers separated by commas");
+       alert("Invalid data submitted. Enter numbers separated by commas");
     };  
 }
 
