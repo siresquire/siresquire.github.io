@@ -128,6 +128,10 @@ button::after {
     margin: auto;
 }
 
+a:link {
+    color: brown;
+}
+
 .footer {
     text-align: end;
     font-size: 10px;
