@@ -83,7 +83,7 @@ function findMedian(){
 }
 
 function findRange(){
-    const data = submit();
+    const data = submit().sort((a,b) => a - b);
     const max = data[data.length - 1];
     const min = data[0];
     const range = max - min;
