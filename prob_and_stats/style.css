@@ -128,10 +128,9 @@ button::after {
     margin: auto;
 }
 
-footer {
-    text-align: center;
-    font-size: 8px;
-    width: fit-content;
+.footer {
+    text-align: end;
+    font-size: 10px;
     background-color: black;
     border-radius: 5px;
     padding: 5px;
