@@ -34,7 +34,7 @@
             <table>
                 <tr>
                     <td>Dataset: </td>
-                    <td><input type="text" name="enter dataset" id="dataset" oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');"></td>
+                    <td><input type="text" name="enter dataset" id="dataset" oninput="this.value = this.value.replace(/[^0-9\.,\]/g, '').replace(/(\..*)\./g, '$1');"></td>
                     <td><button class="submit-button" onclick="submit()">Submit</button></td>
                     <td><button class="clear-button" onclick="document.getElementById('dataset').value=''">Clear</button></td>
                 </tr>
