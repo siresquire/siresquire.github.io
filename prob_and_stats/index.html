@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITC 245 - Probability & Statistics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="child">
+            <img src="header.webp" alt="AAMUSTED Logo">
+            <h3>ITC 245 - Probability & Statistics - Assignment</h3>
+            <p class="sub-head">This program is for UNGROUPED DATA and does the following calculations</p>
+            <ul>
+                <p class="header">Measures of Central Tendency</p>
+                    <li>Mean</li>
+                    <li>Weighted Mean</li>
+                    <li>Mode</li>
+                    <li>Median</li><br>
+                <p class="header">Measures of Dispersion</p>
+                    <li>Range</li>
+                    <li>Mean Deviation</li>
+                    <li>Variance</li>
+                    <li>Standard Deviation</li>
+                    <li>Quartile Deviation</li>
+                    <li>Coefficient of Variance</li>
+            </ul>
+        </div>
+        <div class="child">
+            <p class="header">Enter your dataset separated by commas(,)</p>
+            <table>
+                <tr>
+                    <td>Dataset: </td>
+                    <td><input type="text" name="enter dataset" id="dataset" oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');"></td>
+                    <td><button class="submit-button" onclick="submit()">Submit</button></td>
+                    <td><button class="clear-button" onclick="document.getElementById('dataset').value=''">Clear</button></td>
+                </tr>
+            </table>
+            <table>
+                <p style="font-weight: bold;">For Weighted Mean, input weights in the textbox below</p>
+                <tr>
+                    <td>Weights: </td>
+                    <td><input type="text" name="enter weights for weighted mean" id="weight" oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');"></td>
+                    <td><button class="submit-button" onclick="submitWeight()">Submit</button></td>
+                    <td><button class="submit-button" onclick="document.getElementById('weight').value=''">Clear</button></td>
+                </tr>
+            </table>
+            <p id="showData"><button onclick="sortedArr()">Show Sorted Data</button></p>
+            <p id="data"></p>
+            <p id="display-frequency"></p>
+            <p id="display-weights"></p>
+        </div>
+        <div class="child">
+            <h3>Numerical Measure of Central Tendency</h3>
+            <table>
+                <tr>
+                    <th>Central Tendency</th>
+                    <th>Answer</th>
+                    <th>Calculate</th>
+                </tr>
+                <tr>
+                    <td>Mean: </td>
+                    <td><input type="number" name="mean" id="mean" disabled></td>
+                    <td><button onclick="findMean()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Weighted Mean: </td>
+                    <td><input type="number" name="weighted mean" id="weighted-mean" disabled></td>
+                    <td><button onclick="findWeightedMean()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Mode: </td>
+                    <td><input type="number" name="mode" id="mode" disabled></td>
+                    <td><button onclick="findMode()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Median: </td>
+                    <td><input type="number" name="median" id="median" disabled></td>
+                    <td><button onclick="findMedian()">Calculate</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="child">
+            <h3>Numerical Measure of Dispersion (Variability)</h3>
+            <table>
+                <tr>
+                    <th>Variability</th>
+                    <th>Answer</th>
+                    <th>Calculate</th>
+                </tr>
+                <tr>
+                    <td>Range: </td>
+                    <td><input type="number" name="range" id="range" disabled></td>
+                    <td><button onclick="findRange()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Mean Deviation: </td>
+                    <td><input type="number" name="mean deviation" id="mean-deviation" disabled></td>
+                    <td><button onclick="findMeanDeviation()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Variance: </td>
+                    <td><input type="number" name="variation" id="variance" disabled></td>
+                    <td><button onclick="findVariance()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Standard Deviation: </td>
+                    <td><input type="number" name="standard deviation" id="standard-deviation" disabled></td>
+                    <td><button onclick="findStandardDeviation()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Quartile Deviation: </td>
+                    <td><input type="number" name="quartile deviation" id="quartile-deviation" disabled></td>
+                    <td><button onclick="findQuartileDeviation()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <td>Co-efficient of Variance: </td>
+                    <td><input type="text" name="co-efficient of variance" id="cf-variance" disabled></td>
+                    <td><button onclick="findCoVariance()">Calculate</button></td>
+                </tr>
+            </table>
+        </div>
+        <footer>
+            <p>Designed by: Group 5 (ITE 200I)</p>
+            <p>&copy;2022 All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
