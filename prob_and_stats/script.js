@@ -1,15 +1,23 @@
 function submit(){
-    const dataset = (document.getElementById("dataset").value).split(',');
-    const format =/^[0-9,.]*$/;
+    const data = document.getElementById("dataset").value;
+    
+    if(data != ""){
+        const dataset = data.split(',');
+        const format =/^[0-9,.]*$/;
 
-    if(format.test(dataset)){
-       const datasetArr = dataset.map(str => {
-        return Number(str);
-       });
-    return datasetArr;
+        if((format.test(dataset)) && (data.length > 1)){
+        const datasetArr = dataset.map(str => {
+                return Number(str);
+                });
+            return datasetArr;
+        } else if(format.test(dataset) == false){
+            alert("Invalid data submitted. Ensure you entered numbers separated by commas(,)");
+        } else {
+            alert("Enter more than one item in the dataset");
+        };
     } else {
-       alert("Invalid data submitted. Ensure you entered numbers separated by commas(,)");
-    };  
+        alert("No dataset entered");
+    }  
 }
 
 function submitWeight(){
@@ -35,6 +43,15 @@ function sortedArr(){
 }
 
 function findMean(){
+    if(submit() !== 0 && submit().length>1){
+        const mean = submit().reduce((a,b)=> a+b, 0) / submit().length;
+        return document.getElementById("mean").value = mean;
+    } else {
+        alert("Enter a valid dataset first");
+    } 
+}
+
+function findMeanCV(){
     if(submit() !== 0 && submit().length>1){
         const mean = submit().reduce((a,b)=> a+b, 0) / submit().length;
         return document.getElementById("mean").value = mean;
