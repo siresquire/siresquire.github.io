@@ -221,8 +221,8 @@ function findCoVariance(){
         const variance = (v/length) - Math.pow((x/length),2);
         const sd = Math.sqrt(variance);
 
-        const cv = Math.floor(((sd/mean) * 1) * 100);
-        return document.getElementById("cf-variance").value = cv + "%";
+        const cv = ((sd/mean) * 1) * 100;
+        return document.getElementById("cf-variance").value = cv.toFixed(2) + "%";
     } else {
         alert("Enter a valid dataset first");
     } 
