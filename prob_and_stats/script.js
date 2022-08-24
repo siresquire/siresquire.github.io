@@ -204,23 +204,11 @@ function findStandardDeviation(){
 function quartile(){
     if(submit() !== 0 && submit().length>1){
         const sortedData = submit().sort((a,b) => a - b);
-        const half = Math.ceil(sortedData.length / 2);
-        const firstHalf = sortedData.slice(0, half);
-        const thirdHalf = sortedData.slice(half);
-
-        function findMedian(arr){
-            const sortedData = arr.sort((a,b) => a - b);
-            if(sortedData.length % 2 !== 0){
-                const oddMedian = sortedData[Math.floor(sortedData.length/2)];
-                return oddMedian;
-            } else {
-                let mid1 = sortedData[sortedData.length / 2];
-                let mid2 = sortedData[sortedData.length / 2 - 1]
-                const evenMedian = (mid1 + mid2) / 2;
-                return evenMedian; 
-            }
-        }
-    return document.getElementById("quartile").value = "Q1: " + findMedian(firstHalf).toFixed(2) + ",  Q3: "+ findMedian(thirdHalf).toFixed(2);
+        const arr = sortedData.length;
+        const secondHalf = (0.5) * arr;
+        const firstHalf = (0.25) * arr;
+        const thirdHalf = (0.75) * arr;
+        return document.getElementById("quartile").value = "Q1: " + sortedData[firstHalf-1] + ",  Q2: "+ sortedData[secondHalf-1] + ", Q3: " + sortedData[thirdHalf-1];
     } else {
     alert("Enter a valid dataset first");
     } 
