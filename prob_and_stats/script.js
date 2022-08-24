@@ -217,23 +217,12 @@ function quartile(){
 function interQuartile(){
     if(submit() !== 0 && submit().length>1){
         const sortedData = submit().sort((a,b) => a - b);
-        const half = Math.ceil(sortedData.length / 2);
-        const firstHalf = sortedData.slice(0, half);
-        const thirdHalf = sortedData.slice(half);
-
-        function findMedian(arr){
-            const sortedData = arr.sort((a,b) => a - b);
-            if(sortedData.length % 2 !== 0){
-                const oddMedian = sortedData[Math.floor(sortedData.length/2)];
-                return oddMedian;
-            } else {
-                let mid1 = sortedData[sortedData.length / 2];
-                let mid2 = sortedData[sortedData.length / 2 - 1]
-                const evenMedian = (mid1 + mid2) / 2;
-                return evenMedian; 
-            }
-        }
-    return document.getElementById("inter-quartile").value = (findMedian(thirdHalf) - findMedian(firstHalf)).toFixed(2);
+        const arr = sortedData.length;
+        const firstHalf = (0.25) * arr;
+        const fhalf = sortedData[firstHalf-1]
+        const thirdHalf = (0.75) * arr;
+        const thalf = sortedData[thirdHalf-1]
+        return document.getElementById("inter-quartile").value = (thalf - fhalf).toFixed(1);
     } else {
     alert("Enter a valid dataset first");
     } 
