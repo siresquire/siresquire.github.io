@@ -1,9 +1,9 @@
 function submit(){
     const data = document.getElementById("dataset").value;
     
-    if(data != ""){
+    if(data !== ""){
         const dataset = data.split(',');
-        const format =/^[0-9,.]*$/;
+        const format =/^[0-9,.-]*$/;
 
         if((format.test(dataset)) && (data.length > 1)){
         const datasetArr = dataset.map(str => {
@@ -21,22 +21,41 @@ function submit(){
 }
 
 function submitWeight(){
-    const dataset = (document.getElementById("weight").value).split(',');
-    const datasetArr = dataset.map(str => {
-        return Number(str);
-    });
-    return datasetArr;
+    const data = document.getElementById("weight").value;
+    
+    if(data !== ""){
+        const dataset = data.split(',');
+        const format =/^[0-9,.-]*$/;
+
+        if((format.test(dataset)) && (data.length > 1)){
+        const datasetArr = dataset.map(str => {
+                return Number(str);
+                });
+            return datasetArr;
+        } else if(format.test(dataset) == false){
+            alert("Invalid data submitted. Ensure you entered numbers separated by commas(,)");
+        } else {
+            alert("Enter more than one item in the dataset");
+        };
+    } else {
+        alert("No dataset entered");
+    }  
 }
 
 function sortedArr(){
-    if(submit() !== 0 && submit().length>1){
+    if(submit() !== 0){
+        const data = document.getElementById("weight").value;
+        const weightDataset = data.split(',');
+        const weightLength = weightDataset.length;
+        const dataset = submit();
         const sortedArr = submit().sort((a,b) => a - b);
         const quantity = sortedArr.length;
-        const displayDataSet = document.getElementById("data").innerHTML = "[Dataset: " + sortedArr + "]";
-        const displayWeights = document.getElementById("display-weights").innerHTML ="[Weights: " + submitWeight() + "]";
+        const displayDataSet = document.getElementById("data").innerHTML = "[Sorted Dataset: " + sortedArr + "]";
+        const displayWeights = document.getElementById("display-weights").innerHTML ="[Weights: " + weightDataset + "]";
         const displayFrequency = document.getElementById("display-frequency").innerHTML ="[Dataset Count: " + quantity + "]";
-        console.log(sortedArr);
-        return document.getElementById("data").innerHTML = displayDataSet, displayWeights, displayFrequency;
+        const displayUnsortedDataset = document.getElementById("unsorted-data").innerHTML = "[Unsorted Dataset: " + dataset + "]";
+        const displayWeightLength = document.getElementById("weight-count").innerHTML = "[Weight Count: " + weightLength + "]";
+        return document.getElementById("data").innerHTML = displayDataSet, displayWeights, displayFrequency, displayUnsortedDataset;
     } else {
         alert("Enter a valid dataset first");
     }
@@ -65,7 +84,7 @@ function findWeightedMean(){
         const values = submit();
         const weightData = submitWeight();
         if(values.length !== weightData.length){
-            alert("Values and Weights are of unequal length. Kindly reenter")
+            alert("Dataset and Weights are of unequal length. Kindly reenter")
         } else {
             let a = 0;
             let b = 0;
@@ -182,6 +201,31 @@ function findStandardDeviation(){
     } 
 }
 
+function quartile(){
+    if(submit() !== 0 && submit().length>1){
+        const sortedData = submit().sort((a,b) => a - b);
+        const half = Math.ceil(sortedData.length / 2);
+        const firstHalf = sortedData.slice(0, half);
+        const thirdHalf = sortedData.slice(half);
+
+        function findMedian(arr){
+            const sortedData = arr.sort((a,b) => a - b);
+            if(sortedData.length % 2 !== 0){
+                const oddMedian = sortedData[Math.floor(sortedData.length/2)];
+                return oddMedian;
+            } else {
+                let mid1 = sortedData[sortedData.length / 2];
+                let mid2 = sortedData[sortedData.length / 2 - 1]
+                const evenMedian = (mid1 + mid2) / 2;
+                return evenMedian; 
+            }
+        }
+    return document.getElementById("quartile").value = "Q2: " + findMedian(firstHalf).toFixed(2) + ",  Q3: "+ findMedian(thirdHalf).toFixed(2);
+    } else {
+    alert("Enter a valid dataset first");
+    } 
+}
+
 function findQuartileDeviation(){
     if(submit() !== 0 && submit().length>1){
         const sortedData = submit().sort((a,b) => a - b);
@@ -217,7 +261,7 @@ function findCoVariance(){
         const x_sq = data.map(function(element){
             return Math.abs(Math.pow(element,2));
         });
-        const v = x_sq.reduce((a,b)=> a+b, 0);
+        const v = x_sq.reduce((a,b) => a+b, 0);
         const variance = (v/length) - Math.pow((x/length),2);
         const sd = Math.sqrt(variance);
 

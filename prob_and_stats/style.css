@@ -37,8 +37,8 @@ img {
     padding: 15px;
     width: fit-content;
     height: fit-content;
-    background-color: maroon;
-    opacity: 0.93;
+    background-color: darkkhaki;
+    opacity: 0.97;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     border-radius: 5px;
 }
@@ -120,8 +120,9 @@ td {
 
 button {
     text-align: center;
-    padding: 5px;
+    padding: 7px;
     margin: 2px;
+    border: none;
     border-radius: 5px;
     font-size: smaller;
     background-color: white;
@@ -131,6 +132,7 @@ button {
 button:hover {
     background-color: maroon;
     color: white;
+    cursor: pointer;
 }
 
 button::after {
