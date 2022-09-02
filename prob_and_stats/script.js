@@ -171,13 +171,19 @@ function findVariance(){
     if(submit() !== 0 && submit().length>1){
         const data = submit();
         const length = data.length;
-        const x = data.reduce((a,b)=> a+b, 0);
-        const x_sq = data.map(function(element){
+        const x = data.reduce((a,b)=> a+b, 0) / length;
+        const dev_mean = data.map(function(element){
+            return element - x;
+        });
+        const x_sq = dev_mean.map(function(element){
             return Math.abs(Math.pow(element,2));
         });
         const v = x_sq.reduce((a,b)=> a+b, 0);
-        const variance = (v/length) - Math.pow((x/length),2);
-        return document.getElementById("variance").value = variance;
+        const pop_variance = v / length;
+        const samp_variance = v / (length - 1);
+        const str = "2";
+
+        return document.getElementById("variance").value = "\u03C3" + "\u00B2" + " = " + pop_variance.toFixed(2) + ", s" + "\u00B2" + " = " + samp_variance.toFixed(2);
     } else {
         alert("Enter a valid dataset first");
     } 
@@ -187,15 +193,20 @@ function findStandardDeviation(){
     if(submit() !== 0 && submit().length>1){
         const data = submit();
         const length = data.length;
-        const x = data.reduce((a,b)=> a+b, 0);
-        const x_sq = data.map(function(element){
+        const x = data.reduce((a,b)=> a+b, 0) / length;
+        const dev_mean = data.map(function(element){
+            return element - x;
+        });
+        const x_sq = dev_mean.map(function(element){
             return Math.abs(Math.pow(element,2));
         });
         const v = x_sq.reduce((a,b)=> a+b, 0);
-        const variance = (v/length) - Math.pow((x/length),2);
+        const pop_variance = v / length;
+        const samp_variance = v / (length - 1);
 
-        const sd = Math.sqrt(variance);
-        document.getElementById("standard-deviation").value = sd;
+        const pop_sd = Math.sqrt(pop_variance);
+        const samp_sd = Math.sqrt(samp_variance);
+        document.getElementById("standard-deviation").value = "\u03C3" + " = " + pop_sd.toFixed(2) + ", s = " + samp_sd.toFixed(2);
     } else {
         alert("Enter a valid dataset first");
     } 
@@ -255,20 +266,24 @@ function findQuartileDeviation(){
 
 function findCoVariance(){
     if(submit() !== 0 && submit().length>1){
-        const mean = submit().reduce((a,b)=> a+b, 0) / submit().length;
-
         const data = submit();
         const length = data.length;
-        const x = data.reduce((a,b)=> a+b, 0);
-        const x_sq = data.map(function(element){
+        const x = data.reduce((a,b)=> a+b, 0) / length;
+        const dev_mean = data.map(function(element){
+            return element - x;
+        });
+        const x_sq = dev_mean.map(function(element){
             return Math.abs(Math.pow(element,2));
         });
-        const v = x_sq.reduce((a,b) => a+b, 0);
-        const variance = (v/length) - Math.pow((x/length),2);
-        const sd = Math.sqrt(variance);
+        const v = x_sq.reduce((a,b)=> a+b, 0);
+        const pop_variance = v / length;
+        const samp_variance = v / (length - 1);
+        const pop_sd = Math.sqrt(pop_variance);
+        const samp_sd = Math.sqrt(samp_variance);
 
-        const cv = ((sd/mean) * 1) * 100;
-        return document.getElementById("cf-variance").value = cv.toFixed(2) + "%";
+        const pop_cv = (pop_sd / x) * 1;
+        const samp_cv = (samp_sd / x) * 1;
+        return document.getElementById("cf-variance").value = samp_cv.toFixed(2) + "%";
     } else {
         alert("Enter a valid dataset first");
     } 
