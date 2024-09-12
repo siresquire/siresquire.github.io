@@ -1,14 +1,14 @@
 const profileData = {
   title: "Resume",
-  name: "Aminu Mohammed",
+  name: "Richard Baah-Gyambrah",
   sub_title: "System Administrator and DevOps Engineer",
   logoURL: "assets/images/dp.jpg",
   about: {
     intro: `Senior Software Engineer with 6 years of frontend development experience. Expert in building high-performance UI and seamless UX. Experienced in leading projects, migrating legacy systems, and creating reusable components. Skilled in A/B testing, cross-platform compatibility, and responsive design. Effective mentor and collaborator dedicated to continuous learning and innovation.`,
     contact: {
-      email: "ghana@gmail.com",
-      phone: "+233-9151413108",
-      address: "UK",
+      email: "richard@gmail.com",
+      phone: "001647673294746",
+      address: "New York City",
     },
   },
   links: [
