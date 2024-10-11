@@ -1,20 +1,20 @@
 const profileData = {
   title: "Resume",
-  name: "Aminu Mohammed",
+  name: "Jeremy Issah-McAnderson",
   sub_title: "System Administrator and DevOps Engineer",
   logoURL: "assets/images/dp.jpg",
   about: {
-    intro: `Senior Software Engineer with 6 years of frontend development experience. Expert in building high-performance UI and seamless UX. Experienced in leading projects, migrating legacy systems, and creating reusable components. Skilled in A/B testing, cross-platform compatibility, and responsive design. Effective mentor and collaborator dedicated to continuous learning and innovation.`,
+    intro: `Senior Software Engineer with 5 years of frontend development experience. Expert in building high-performance UI and seamless UX. Experienced in leading projects, migrating legacy systems, and creating reusable components. Skilled in A/B testing, cross-platform compatibility, and responsive design. Effective mentor and collaborator dedicated to continuous learning and innovation.`,
     contact: {
-      email: "ghana@gmail.com",
-      phone: "+233-9151413108",
-      address: "UK",
+      email: "jeremcandi@gmail.com",
+      phone: "+233-246225165",
+      address: "CANADA",
     },
   },
   links: [
     {
       title: "LinkedIn",
-      src: "https://www.linkedin.com/in/imvpn22",
+      src: "https://www.linkedin.com/in/jeremy-issah-mcanderson-47b2031b8/",
       iconClass: "fa-brands fa-linkedin-in",
     },
     {
@@ -46,7 +46,7 @@ const profileData = {
     },
     {
       title: "Monitoring & Observability",
-      value: "Prometheus, Grafana",
+      value: "Prometheus, Grafana, Gabbix, Nagios",
     },
     {
       title: "Cloud Computing",
